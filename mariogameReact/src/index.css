@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.background {
+  background: rgb(98, 133, 248);
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.background td {
+  padding: 0;
+}
+
+.lava {
+  /*background: rgb(255, 100, 100);*/
+  background-image: url(./assets/lava.png);
+  background-size: cover;
+}
+
+.wall {
+  background: rgb(155, 72, 3);
+  border-radius: 5px;
+}
+
+.actor {
+  position: absolute;
+}
+
+.coin {
+  /*background: rgb(241, 229, 89);*/
+  background-image: url(./assets/coin.png);
+  background-size: cover;
+}
+
+.player {
+  /*background: rgb(64, 64, 64);*/
+  background-image: url(./assets/mario.png);
+  background-size: cover;
+  width: min-content;
+}
+
+.game {
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 450px;
+  position: relative;
+}
+
+.lost .player {
+  background: rgb(160, 64, 64);
+}
+
+.won .player {
+  box-shadow: -4px -7px 8px white, 4px -7px 8px white;
+}
