@@ -1,5 +1,5 @@
 .background {
-  background: rgb(52, 166, 251);
+  background: rgb(98, 133, 248);
   table-layout: fixed;
   border-spacing: 0;
 }
@@ -15,7 +15,8 @@
 }
 
 .wall {
-  background: white;
+  background: rgb(155, 72, 3);
+  border-radius: 5px;
 }
 
 .actor {
