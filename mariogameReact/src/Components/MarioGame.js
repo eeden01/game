@@ -135,6 +135,7 @@ function elt(name, attrs, ...children) {
 
 const DOMDisplay = class DOMDisplay {
   constructor(parent, level) {
+    console.log("DOMDisplay -> constructor -> level", level);
     this.dom = elt("div", { class: "game" }, drawGrid(level));
     this.actorLayer = null;
     parent.appendChild(this.dom);
@@ -369,13 +370,14 @@ function runLevel(level, Display) {
 }
 
 function MarioGame() {
-  const lifeRef = useRef(() => {});
+  const lifeRef = useRef();
 
   async function runGame(plans, Display) {
     let lives = 5;
     lifeRef.current.textContent = lives;
     for (let level = 0; level < plans.length; ) {
       let status = await runLevel(new Level(plans[level]), Display);
+      console.log("runGame -> status", status);
       if (status == "won") level++;
       if (status == "lost") {
         console.log("runGame -> status", status);
@@ -394,7 +396,11 @@ function MarioGame() {
     if (!lifeRef) return;
     runGame(GAME_LEVELS, DOMDisplay);
   }, []);
-  return <div ref={lifeRef}></div>;
+  return (
+    <>
+      <div ref={lifeRef}></div>
+    </>
+  );
 }
 
 export default MarioGame;
