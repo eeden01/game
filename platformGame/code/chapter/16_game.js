@@ -379,6 +379,10 @@ function runLevel(level, Display) {
 }
 
 async function runGame(plans, Display) {
+  var myAudio = document.createElement("audio");
+  myAudio.src = "/Users/micha/Documents/Coding/Projecten/Game/platformGame/assets/audio/mario.mp3";
+  myAudio.play();
+
   let lives = 5;
   let livesElement = document.getElementsByClassName("header");
   livesElement[0].textContent = lives;
